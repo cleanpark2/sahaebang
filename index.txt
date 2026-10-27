@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사해방 보안팀 중재 상점</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Dosis:wght@600&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: #050510;
+            color: #ffffff;
+            font-family: 'Noto Sans KR', sans-serif;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            border: 4px solid #3b82f6;
+            background: #0b0f19;
+            padding: 25px;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            position: relative;
+        }
+        .header-title {
+            text-align: center;
+            font-size: 24px;
+            color: #f472b6;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-shadow: 2px 2px #be185d;
+        }
+        .section-box {
+            border: 2px dashed #60a5fa;
+            background: #111827;
+            padding: 15px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .section-title {
+            font-size: 16px;
+            color: #38bdf8;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        pre {
+            background: #030712;
+            border: 1px solid #1e3a8a;
+            padding: 12px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+            color: #e2e8f0;
+            white-space: pre-wrap;
+            word-break: break-all;
+            margin-bottom: 10px;
+            max-height: 180px;
+            overflow-y: auto;
+        }
+        .copy-btn {
+            background: #2563eb;
+            color: #ffffff;
+            border: 2px solid #1d4ed8;
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.1s;
+        }
+        .copy-btn:hover {
+            background: #1d4ed8;
+            box-shadow: 0 0 10px #3b82f6;
+        }
+        .copy-btn:active {
+            transform: scale(0.96);
+        }
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            background: #ec4899;
+            color: #fff;
+            padding: 10px 20px;
+            border: 2px solid #db2777;
+            font-weight: 700;
+            display: none;
+            box-shadow: 0 0 10px #ec4899;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-title">🛡️ 사해방 보안팀 중재 상점 🛡️</div>
+
+        <!-- 1단계 -->
+        <div class="section-box">
+            <div class="section-title">1단계: 입장 및 중재 시작 안내</div>
+            <pre id="text1">📢 [보안팀 중재 시작 안내]
+
+안녕하세요, 보안팀 <@보안팀원태그>입니다.
+본 채널은 사건사고 해결을 위한 공간입니다. 원활한 사건 조사를 위해 아래 수칙을 반드시 준수해 주시기 바랍니다.
+
+📌 사해방 기본 준수 수칙
+1. 한 사람이 발언 중일 때는 말을 끊지 마시고 차례를 기다려 주세요.
+2. 감정적인 비방 및 욕설을 금지하며, 객관적인 사실만 말씀해 주세요.
+3. 관리자 및 보안팀의 지시에 협조해 주시기 바랍니다.
+
+규정을 위반하거나 비협조적인 태도를 보일 경우, 관리자 재량으로 즉시 경고 조치 또는 임의 종결될 수 있습니다. 지금부터 중재를 시작합니다.</pre>
+            <button class="copy-btn" onclick="copyText('text1')">📋 복사하기</button>
+        </div>
+
+        <!-- 2단계 -->
+        <div class="section-box">
+            <div class="section-title">2단계: 양측 진술 및 증거 제출</div>
+            <pre id="text2">📝 [양측 진술 및 증거 제출]
+
+1. @<상대방태그> 님은 접수된 신고 내용에 대해 본인의 입장 및 당시 상황을 설명해 주세요.
+2. 양측 모두 본인의 주장을 뒷받침할 캡처본, 녹화 영상 등 [증거 자료]가 있다면 이 채널에 올려주시기 바랍니다.
+
+※ 상대방이 진술하는 동안에는 발언을 자제해 주시고, 본인 차례가 되면 말씀해 주세요.</pre>
+            <button class="copy-btn" onclick="copyText('text2')">📋 복사하기</button>
+        </div>
+
+        <!-- 3단계 -->
+        <div class="section-box">
+            <div class="section-title">3단계: 현장 통제 및 제지 멘트</div>
+            <pre id="text3">⚠️ [보안팀 현장 제지 및 권한 조치]
+
+- 말 끊기 제지: "@<태그> 님, 상대방 발언 중 난입 및 말 끊기는 사해방 규정 위반입니다. 지금 발언 자제해 주시고 본인 차례를 기다리세요."
+- 마이크/채팅 제한: "@<태그> 님, 관리자의 지속적인 제지에도 불구하고 말을 끊고 지시에 불응하여 [마이크 잠금 및 채팅 권한 제한]이 적용됩니다."
+- 성의 없는 태도 경고: "@<태그> 님, 중재 과정에서 비협조적이고 성의 없는 태도를 보임에 따라 사해방 규정에 의거하여 경고가 추가 부여됩니다."</pre>
+            <button class="copy-btn" onclick="copyText('text3')">📋 복사하기</button>
+        </div>
+
+        <!-- 4단계 -->
+        <div class="section-box">
+            <div class="section-title">4단계: 사건 종결 안내 (합의 / 제재 / 임의종결)</div>
+            <pre id="text4">[🅰️ 합의 완료 시]
+✅ [사건 종결 안내 - 합의 완료]
+양측 진술과 증거 확인 결과, 본 사건은 원만히 합의되어 마무리되었습니다. 조치: 구두 경고 1회 및 재발 방지 약속.
+
+[🅱️ 제재 처리 시]
+⛔ [사건 종결 안내 - 제재 처리]
+보안팀 조사 결과 규정 위반이 확인되어 제재를 진행합니다. 대상자: @<대상자>, 처분: 경고 1회 / 타임아웃 등.
+
+[📌 임의 종결 시]
+⚠️ [사건 종결 안내 - 보안팀 임의 종결]
+지속적인 규정 위반 및 비협조적 태도로 인해 보안팀 권한으로 사건을 임의 종결합니다. 추가 경고 부여.</pre>
+            <button class="copy-btn" onclick="copyText('text4')">📋 복사하기</button>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">클립보드에 복사되었습니다! ✨</div>
+
+    <script>
+        function copyText(containerId) {
+            const text = document.getElementById(containerId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                toast.style.display = 'block';
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 1500);
+            });
+        }
+    </script>
+</body>
+</html>
